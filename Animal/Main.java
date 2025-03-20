@@ -10,6 +10,7 @@ public class Main {
         ArrayList<Bicho> list = new ArrayList<>();
         ArrayList<Gato> list2 = new ArrayList<>();
         ArrayList<Cachorro> list3 = new ArrayList<>();
+
         int op = 0;
 
         while (op != 3) {
@@ -44,30 +45,36 @@ public class Main {
                         System.out.println("informe o barulho do animal");
                         String som = sc.nextLine();
                         list.add(new Bicho(nome3, tipoDoAnimal, som));
-                    } else {
-                        System.out.println("valor invalido");
                     }
 
                     break;
                 case 2:
-                    if (list.isEmpty()) {
-                        System.out.println(" a lista está vazia por favor cadastre um animal");
-                    } else {
-                        informacoes3();
+                    informacoes3();
+                    int escolha2 = sc.nextInt();
+                    if (escolha2 == 1) {
                         for (Cachorro cachorro : list3) {
 
                             cachorro.fazerSom();
                         }
+
+                    }
+                    if (escolha2 == 2) {
                         for (Gato gato : list2) {
 
                             gato.fazerSom();
                         }
+
+                    }
+
+                    if (escolha2 == 2) {
+
                         for (Bicho bicho : list) {
 
                             bicho.fazerSom();
                         }
 
                     }
+
                     break;
                 case 3:
                     System.out.println("programa encerrado");
@@ -95,6 +102,7 @@ public class Main {
         System.out.println("3- animal de outra especime");
         System.out.println("===========================");
     }
+
     public static void informacoes3() {
         System.out.println("===========================");
         System.out.println("informe o tipo de animal que voce quer ver o som ");
